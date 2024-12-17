@@ -8,3 +8,7 @@ Gerenciador de Tarefas
 - React Router
 - Styled-Components
 - Vite
+
+## Tela de listagem de tarefas 
+![Uploading screenListTask.PNG…]()
+
