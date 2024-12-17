@@ -5,6 +5,10 @@ export const ListTaskMain = styled.div`
   height: 40rem;
   margin: 1rem auto;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-color: #facc15 #0a0a0a;
+  scrollbar-width: thin;
+
   h2 {
     color: #fff;
     font-size: 2rem;
@@ -23,9 +27,21 @@ export const ListTaskMain = styled.div`
     border: 0.5px solid #facc15;
     margin-top: 1.2rem;
   }
-  li span {
-    color: #fff;
-    font-size: 1.5rem;
+  li {
     letter-spacing: 0.2rem;
+  }
+  li div {
+    display: flex;
+    flex-direction: column;
+  }
+  li div span:first-child {
+    color: #facc15;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  li div span:last-child {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
   }
 `;

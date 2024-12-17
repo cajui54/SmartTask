@@ -1,18 +1,32 @@
 import useAxios from "../../hooks/useAxios";
+import LoadingComponent from "../loading";
 import * as styled from "./styled";
 const ListTaskComponent = () => {
-  useAxios();
+  const { tasks, isLoading } = useAxios();
   return (
     <styled.ListTaskMain>
       <h2>Tarefas do Dia</h2>
-      <ul>
-        <li>
-          <span>Wake Up at 7:00 AM</span>
-        </li>
-        <li>
-          <span>Wake Up at 7:00 AM</span>
-        </li>
-      </ul>
+
+      {!isLoading ? (
+        <ul>
+          {tasks.length > 0 ? (
+            tasks.map((task) => (
+              <li key={task._id}>
+                <div>
+                  <span>{task.title}</span>
+                  <span>{task.description}</span>
+                </div>
+              </li>
+            ))
+          ) : (
+            <li>
+              <span>Não há tarefas ainda.</span>
+            </li>
+          )}
+        </ul>
+      ) : (
+        <LoadingComponent />
+      )}
     </styled.ListTaskMain>
   );
 };

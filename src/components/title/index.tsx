@@ -1,9 +1,14 @@
 import * as styled from "./styled";
-const TitleComponent = () => {
+interface TitleProps {
+  title: string;
+  subtitle: string;
+}
+
+const TitleComponent = ({ title, subtitle }: TitleProps) => {
   return (
     <styled.TitleMain>
-      <h2>Smart Task</h2>
-      <h3>Gerencie suas tarefas</h3>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
     </styled.TitleMain>
   );
 };

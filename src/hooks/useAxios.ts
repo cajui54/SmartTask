@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../helpers/axios-instance";
+import { FormTask } from "../pages/form-create";
 
 interface ITask {
   _id: string;
@@ -7,11 +8,20 @@ interface ITask {
   description: string;
   isCompleted: boolean;
 }
+
 const useAxios = () => {
   const [tasks, setTasks] = useState<ITask[] | []>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
 
+  const createNewTask = async (datas: FormTask) => {
+    await axiosInstance.post("/task", {
+      title: datas.title,
+      description: datas.description,
+      isCompleted: false,
+    });
+
+    return;
+  };
   useEffect(() => {
     const requestTasks = async () => {
       try {
@@ -26,14 +36,14 @@ const useAxios = () => {
 
         setTasks(tasksList);
       } catch (error: any) {
-        setError(`Ocorreu um erro inesperado. ${error.message}`);
+        alert(`Ocorreu um erro inesperado. ${error.message}`);
       } finally {
         setIsLoading(false);
       }
     };
     requestTasks();
   }, []);
-  return { tasks, isLoading, error };
+  return { tasks, isLoading, createNewTask };
 };
 
 export default useAxios;

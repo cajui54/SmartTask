@@ -30,3 +30,14 @@ h3 {
 button {
   cursor: pointer;
 }
+.loadingSpin {
+  animation: spin 0.5s ease-in-out infinite forwards !important;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
