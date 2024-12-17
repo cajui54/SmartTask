@@ -19,7 +19,7 @@ const ListTaskComponent = () => {
               </li>
             ))
           ) : (
-            <li>
+            <li className="info">
               <span>Não há tarefas ainda.</span>
             </li>
           )}

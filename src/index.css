@@ -41,3 +41,9 @@ button {
     transform: rotate(360deg);
   }
 }
+.info {
+  color: #fff;
+  background-color: transparent !important;
+  border: none !important;
+  text-align: center;
+}
