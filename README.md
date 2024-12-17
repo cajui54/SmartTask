@@ -12,3 +12,6 @@ Gerenciador de Tarefas
 ## Tela de listagem de tarefas 
 ![Uploading screenListTask.PNG…]()
 
+## Tela para Criar tarefas
+
+![Uploading screenCreateTask.PNG…]()
