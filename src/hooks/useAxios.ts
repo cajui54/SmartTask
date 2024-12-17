@@ -12,7 +12,7 @@ interface ITask {
 const useAxios = () => {
   const [tasks, setTasks] = useState<ITask[] | []>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const [callFetch, setCallFetch] = useState<boolean>(false);
   const createNewTask = async (datas: FormTask) => {
     await axiosInstance.post("/task", {
       title: datas.title,
@@ -21,6 +21,16 @@ const useAxios = () => {
     });
 
     return;
+  };
+  const deleteTask = async (id: string) => {
+    try {
+      setCallFetch(true);
+      await axiosInstance.delete(`task/${id}`);
+    } catch (error) {
+      alert("Ocorreu um erro inesperado!");
+    } finally {
+      setCallFetch(false);
+    }
   };
   useEffect(() => {
     const requestTasks = async () => {
@@ -35,6 +45,7 @@ const useAxios = () => {
         }));
 
         setTasks(tasksList);
+        console.log(tasksList);
       } catch (error: any) {
         alert(`Ocorreu um erro inesperado. ${error.message}`);
       } finally {
@@ -42,8 +53,8 @@ const useAxios = () => {
       }
     };
     requestTasks();
-  }, []);
-  return { tasks, isLoading, createNewTask };
+  }, [callFetch]);
+  return { tasks, isLoading, createNewTask, deleteTask };
 };
 
 export default useAxios;

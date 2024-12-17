@@ -7,9 +7,12 @@ function App() {
   return (
     <styled.MainApp>
       <TitleComponent title="Smart Task" subtitle="Gerencie suas tarefas" />
-      <button onClick={() => navigate("/pages/form-create")}>
-        Criar Nova Tarefa
-      </button>
+      <styled.ButtonContainer>
+        <button onClick={() => navigate("/pages/form-create")}>
+          Criar Nova Tarefa
+        </button>
+      </styled.ButtonContainer>
+
       <ListTaskComponent />
     </styled.MainApp>
   );

@@ -29,6 +29,9 @@ export const ListTaskMain = styled.div`
   }
   li {
     letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   li div {
     display: flex;
@@ -43,5 +46,20 @@ export const ListTaskMain = styled.div`
     color: #fff;
     font-weight: bold;
     font-size: 1.3rem;
+  }
+  li button {
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+  li button svg {
+    font-size: 1.5rem;
   }
 `;

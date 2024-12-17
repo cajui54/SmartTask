@@ -6,6 +6,8 @@ export const MainApp = styled.div`
   min-height: 50rem;
   background-color: #121214;
   border-radius: 0.5rem;
+`;
+export const ButtonContainer = styled.div`
   button {
     width: 20rem;
     margin: 3rem auto;
