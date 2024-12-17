@@ -1,6 +1,5 @@
 # React + TypeScript + Vite
-
-## Gerenciador de Tarefas
+Gerenciador de Tarefas
 
 ### Stacks usadas:
 
